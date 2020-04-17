@@ -32,8 +32,10 @@ Route::get('/features', function () {
 //     return view('test');
 // });
 
-Route::get('/','PagesController@index');
+Route::get('/', 'PagesController@index');
 // Routes::get('/features','PagesController@features');
 
-Route::get('mahasiswa','MahasiswaController@index');
-Route::get('/students/{student}','StudentsController@show');
+Route::get('/students', 'StudentsController@index');
+Route::get('/students/create', 'StudentsController@create');
+Route::get('/students/{student}', 'StudentsController@show');
+Route::post('/students', 'StudentsController@store');
